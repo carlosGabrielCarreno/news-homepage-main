@@ -10,9 +10,8 @@ const DropdownMenu = styled.ul`
   position: absolute;
   top: 100%;
   right: 0;
-  // width: 40vw;
-  width: 50%;
-  height: 100%;
+  width: 65%;
+  height: 80vh;
   padding: 0;
   margin: 0;
   list-style: none;
