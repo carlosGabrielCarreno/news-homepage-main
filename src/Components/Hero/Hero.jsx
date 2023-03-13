@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { News } from "../News/News";
 import imgHero from "./../../../assets/images/image-web-3-mobile.jpg";
 
 const HeroContainer = styled.div``;
@@ -13,6 +14,7 @@ export const Hero = () => {
         eaque dolorum! Rem eveniet ad ab excepturi eaque temporibus. Culpa!
       </p>
       <button>read more</button>
+      <News />
     </HeroContainer>
   );
 };
