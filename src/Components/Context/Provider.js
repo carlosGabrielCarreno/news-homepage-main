@@ -21,7 +21,16 @@ export const Provider = ({ children }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, [windowSize]);
-  return <Context.Provider value={{}}>{children}</Context.Provider>;
+  return (
+    <Context.Provider
+      value={{
+        showMobileMenu,
+        setShowMobileMenu,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
 };
 
 export { Provider };

@@ -1,12 +1,15 @@
 import { ContainerApp } from "./App-styled";
 import { Main, Navbar } from "./Components";
+import { Provider } from "./Components/Context/Provider";
 
 function App() {
   return (
-    <ContainerApp className="app">
-      <Navbar />
-      <Main />
-    </ContainerApp>
+    <Provider>
+      <ContainerApp className="app">
+        <Navbar />
+        <Main />
+      </ContainerApp>
+    </Provider>
   );
 }
 
