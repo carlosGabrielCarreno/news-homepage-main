@@ -1,15 +1,15 @@
 import { ContainerApp } from "./App-styled";
 import { Main, Navbar } from "./Components";
-import { Provider } from "./Components/Context/Provider";
+import { ProviderData } from "./Components/Context/ProviderData";
 
 function App() {
   return (
-    <Provider>
+    <ProviderData>
       <ContainerApp className="app">
         <Navbar />
         <Main />
       </ContainerApp>
-    </Provider>
+    </ProviderData>
   );
 }
 

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../../../assets/images/logo.svg";
 import openBtn from "../../../assets/images/icon-menu.svg";
 import closeBtn from "../../../assets/images/icon-menu-close.svg";
 //import { ContainerNavbar } from "./Navbar.styled";
 import styled from "styled-components";
+import { Context } from "../Context/Context";
 
 const DropdownMenu = styled.ul`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
@@ -28,6 +29,19 @@ const DropdownMenu = styled.ul`
     &:last-child {
       border-bottom: none;
     }
+  }
+  @media screen and (min-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid red;
+    position: relative;
+    top: 0;
+    width: 80%;
+    height: 70%;
+  }
+  @media screen and (min-width: 800px) {
+    width: 60%;
   }
 `;
 
@@ -57,6 +71,7 @@ const ContainerNavbar = styled.nav`
 `;
 
 const Overlay = styled.div`
+  display: ${({ modeDesktop }) => (modeDesktop ? "none" : "block")};
   position: absolute;
   top: 0;
   left: 0;
@@ -71,10 +86,14 @@ const Overlay = styled.div`
 const IconMenu = styled.img`
   position: relative;
   z-index: 20;
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
 `;
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { windowSize } = useContext(Context);
 
   return (
     <ContainerNavbar>
@@ -83,7 +102,7 @@ export const Navbar = () => {
         src={isMenuOpen ? closeBtn : openBtn}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       />
-      <Overlay isOpen={isMenuOpen} />
+      <Overlay isOpen={isMenuOpen} modeDesktop={windowSize.width > 600} />
       <DropdownMenu isOpen={isMenuOpen}>
         <li>Home</li>
         <li>New</li>

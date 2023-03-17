@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Context } from "./Context";
 
-export const Provider = ({ children }) => {
+const ProviderData = ({ children }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -26,6 +26,7 @@ export const Provider = ({ children }) => {
       value={{
         showMobileMenu,
         setShowMobileMenu,
+        windowSize,
       }}
     >
       {children}
@@ -33,4 +34,4 @@ export const Provider = ({ children }) => {
   );
 };
 
-export { Provider };
+export { ProviderData };
