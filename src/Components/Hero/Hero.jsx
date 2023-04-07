@@ -14,6 +14,20 @@ const HeroContainer = styled.div`
     font-weight: 700;
     font-size: 3rem;
   }
+  & .btn-primary {
+    background-color: hsl(5, 85%, 63%);
+    color: hsl(36, 100%, 99%);
+    letter-spacing: 5px;
+    padding: 15px;
+    font-weight: 600;
+    border: 0;
+    text-transform: uppercase;
+    margin: 5px 0;
+    :hover {
+      cursor: pointer;
+      background-color: hsl(240, 100%, 5%);
+    }
+  }
   @media screen and (min-width: 600px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
@@ -86,7 +100,7 @@ export const Hero = () => {
           odio eaque dolorum! Rem eveniet ad ab excepturi eaque temporibus.
           Culpa!
         </p>
-        <button>read more</button>
+        <button className="btn-primary">read more</button>
       </div>
 
       <div className="ContainerNews">
