@@ -53,6 +53,8 @@ const ContainerNavbar = styled.nav`
   position: relative;
   height: 15%;
   padding: 0 30px;
+  //border: solid;
+  margin: 1rem 0;
   & .options {
     font-size: 18px;
     width: 60%;

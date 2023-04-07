@@ -6,6 +6,14 @@ import { Context } from "../Context/Context";
 import { useContext } from "react";
 
 const HeroContainer = styled.div`
+  & .img {
+    width: 100%;
+    height: 300px;
+  }
+  & .h1 {
+    font-weight: 700;
+    font-size: 3rem;
+  }
   @media screen and (min-width: 600px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
@@ -16,7 +24,7 @@ const HeroContainer = styled.div`
     & .img {
       grid-column: 1 / 3;
       grid-row: 1;
-      max-width: 90%;
+      max-width: 100%;
       max-height: 100%;
     }
     & .h1 {

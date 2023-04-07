@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ContainerApp = styled.div`
   border: solid blueviole;
-  width: 100%;
+  width: 90%;
 
-  height: 100vh;
+  //height: 100vh;
   margin: 0 auto;
 `;
