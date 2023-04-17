@@ -14,6 +14,9 @@ const HeroContainer = styled.div`
     font-weight: 700;
     font-size: 3rem;
   }
+  & .p {
+    color: hsl(236, 13%, 42%);
+  }
   & .btn-primary {
     background-color: hsl(5, 85%, 63%);
     color: hsl(36, 100%, 99%);
@@ -60,9 +63,16 @@ const HeroContainer = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      & .new {
-        background-color: hsl(240, 100%, 5%);
-      }
+    }
+  }
+  & .ContainerNews {
+    background-color: hsl(240, 100%, 5%);
+    color: hsl(36, 100%, 99%);
+    padding: 5px;
+    & .new .new-title {
+      color: hsl(35, 77%, 62%);
+    }
+    & .new .container-text {
     }
   }
 `;
@@ -105,8 +115,14 @@ export const Hero = () => {
 
       <div className="ContainerNews">
         <div className="new">
-          <h2>New</h2>
-          <h3>Hydrogen VS Electric Cars</h3>
+          <h2 className="new-title">New</h2>
+          <div className="container-text">
+            <h3>Hydrogen VS Electric Cars</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+              numquam!
+            </p>
+          </div>
         </div>
         <div className="new">
           <h2>The Downsides of Al Artistry</h2>

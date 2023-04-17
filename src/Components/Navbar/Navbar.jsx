@@ -52,7 +52,7 @@ const ContainerNavbar = styled.nav`
   flex-grow: 1;
   position: relative;
   height: 15%;
-  padding: 0 30px;
+  //padding: 0 30px;
   //border: solid;
   margin: 1rem 0;
   & .options {
