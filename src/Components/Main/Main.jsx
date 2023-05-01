@@ -4,7 +4,8 @@ import { Hero } from "../Hero/Hero";
 
 const MainContainer = styled.main`
   border: solid red;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   height: 50%;
 `;
 

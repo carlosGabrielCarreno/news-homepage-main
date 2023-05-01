@@ -9,6 +9,7 @@ import { Context } from "../Context/Context";
 const DropdownMenu = styled.ul`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: absolute;
+  z-index: 12;
   top: 100%;
   right: 0;
   width: 65%;
@@ -52,9 +53,13 @@ const ContainerNavbar = styled.nav`
   flex-grow: 1;
   position: relative;
   height: 15%;
+  z-index: 8;
   //padding: 0 30px;
   //border: solid;
-  margin: 1rem 0;
+  border: solid teal;
+  width: 90%;
+  //width: ${({ isOpen }) => (isOpen ? "100%" : "90%")};
+  margin: 0 auto;
   & .options {
     font-size: 18px;
     width: 60%;
@@ -77,8 +82,9 @@ const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 35%;
-  height: 100vh;
+  border: solid greenyellow;
+  width: 100vw;
+  height: 300vh;
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 10;
