@@ -56,10 +56,17 @@ const ContainerNavbar = styled.nav`
   z-index: 8;
   //padding: 0 30px;
   //border: solid;
-  border: solid teal;
-  width: 90%;
+  //border: solid teal;
+  //width: 100%;
   //width: ${({ isOpen }) => (isOpen ? "100%" : "90%")};
-  margin: 0 auto;
+  & .container {
+    width: 90%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
   & .options {
     font-size: 18px;
     width: 60%;
@@ -82,7 +89,7 @@ const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  border: solid greenyellow;
+  //border: solid greenyellow;
   width: 100vw;
   height: 300vh;
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
@@ -105,19 +112,21 @@ export const Navbar = () => {
 
   return (
     <ContainerNavbar>
-      <img className="logotype" src={logo} alt="logotype" />
-      <IconMenu
-        src={isMenuOpen ? closeBtn : openBtn}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      />
-      <Overlay isOpen={isMenuOpen} modeDesktop={windowSize.width > 600} />
-      <DropdownMenu isOpen={isMenuOpen}>
-        <li>Home</li>
-        <li>New</li>
-        <li>Popular</li>
-        <li>Trending</li>
-        <li>Categories</li>
-      </DropdownMenu>
+      <div className="container">
+        <img className="logotype" src={logo} alt="logotype" />
+        <IconMenu
+          src={isMenuOpen ? closeBtn : openBtn}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        />
+        <Overlay isOpen={isMenuOpen} modeDesktop={windowSize.width > 600} />
+        <DropdownMenu isOpen={isMenuOpen}>
+          <li>Home</li>
+          <li>New</li>
+          <li>Popular</li>
+          <li>Trending</li>
+          <li>Categories</li>
+        </DropdownMenu>
+      </div>
     </ContainerNavbar>
   );
 };
